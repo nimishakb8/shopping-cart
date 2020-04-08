@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './styles.module.css';
 import Search from '../Search';
-import Cart from '../Cart';
+// import Cart from '../Cart';
 import starSrc from '../../assets/images/starr.png';
 import cartIcon from '../../assets/images/cart.png';
 import { Link } from 'react-router-dom';
