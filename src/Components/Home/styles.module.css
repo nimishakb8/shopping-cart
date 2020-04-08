@@ -1,0 +1,42 @@
+.header {
+	background-color: #9933cc;
+	color: #ffffff;
+	padding: 15px;
+}
+.section {
+	/* height: 100 vh; */
+	display: flex;
+	height: 90vh;
+	margin-top: 40px;
+}
+
+/* .itemSection {
+	display: flex;
+	flex-direction: column;
+	width: 70%;
+} */
+.mobSection {
+	display: flex;
+	height: 90vh;
+	margin-top: 40px;
+	flex-direction: column;
+}
+.mobFilterSortWrapper {
+	display: flex;
+	margin-top: 40px;
+	font-size: 20px;
+}
+.filterButton {
+	display: flex;
+	justify-content: center;
+	width: 50%;
+}
+.sortButton {
+	display: flex;
+	justify-content: center;
+	width: 50%;
+}
+.filterSortFont {
+	font-size: 20px;
+	font-weight: bold;
+}

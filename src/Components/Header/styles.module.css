@@ -1,0 +1,21 @@
+.header {
+	display: flex;
+	justify-content: space-between;
+	background-color: #2874f0;
+	color: #ffffff;
+	padding: 10px;
+	height: 40px;
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	z-index: 9999;
+}
+
+.star {
+	display: flex;
+	width: 60%;
+}
+.cart {
+	display: flex;
+}
