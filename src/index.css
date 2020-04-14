@@ -41,3 +41,14 @@ input[type='range']:focus {
 input[type='range']:focus::-webkit-slider-runnable-track {
 	background: #ccc;
 }
+
+.input-range__slider {
+	background-color: white !important;
+	border: 1px solid #2874f0 !important;
+}
+.input-range__track--active {
+	background: #2874f0 !important;
+}
+.input-range__track {
+	height: 0.1rem !important;
+}

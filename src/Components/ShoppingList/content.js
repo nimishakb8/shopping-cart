@@ -8,6 +8,10 @@ export default ({ close, filter }) => (
 		<a className={styles.close} onClick={close}>
 			&times;
 		</a>
-		{filter ? <Filter /> : <Sort onClick={close} isFromPopUp={true} />}
+		{filter ? (
+			<Filter onClick={close} isFromPopUp={true} />
+		) : (
+			<Sort onClick={close} isFromPopUp={true} />
+		)}
 	</div>
 );

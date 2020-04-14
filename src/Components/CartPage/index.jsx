@@ -10,6 +10,15 @@ function CartPage() {
 	const [cartItems, setCartItems] = useContext(CartContext);
 
 	const [qty, setQty] = useState(0);
+	const removeItem = item => {
+		const tempCartItems = cartItems.filter(cartItem => cartItem.id !== item.id);
+		// cartItems.forEach((data, i) => {
+		// 	if (data.id === item.id) {
+		// 		cartItems.splice(i, 1);
+		// 	}
+		// });
+		setCartItems(tempCartItems);
+	};
 
 	const modifyQty = (item, op) => {
 		let newCartItems = cartItems.map(x => {
@@ -28,7 +37,7 @@ function CartPage() {
 		});
 		return (
 			<div className={styles.priceContainer}>
-				<span className={styles.priceFont}>PRICE DETAILS</span>
+				<span className={styles.priceHeader}>PRICE DETAILS</span>
 				<span className={styles.priceFont}> Price (items): {total}</span>
 				<span className={styles.priceFont}>Total : {`Rs ${total}`}</span>
 			</div>
@@ -46,14 +55,16 @@ function CartPage() {
 							width: 200
 						}}
 					>
-						<span style={{ margin: 5, fontSize: 20 }}>{x.name}</span>
+						<span style={{ margin: 5, fontSize: 20, textAlign: 'center' }}>
+							{x.name}
+						</span>
 
-						<div style={{ display: 'flex' }}>
+						<div style={{ display: 'flex', justifyContent: 'center' }}>
 							<span
-								style={{ width: 40, margin: 5, fontSize: 15 }}
+								style={{ width: 40, margin: 10, fontSize: 15 }}
 							>{`Rs${x.price}`}</span>
 							<span
-								style={{ margin: 5, fontSize: 15, color: 'green' }}
+								style={{ margin: 10, fontSize: 15, color: 'green' }}
 							>{`${x.discount}% off`}</span>
 						</div>
 					</div>
@@ -77,6 +88,10 @@ function CartPage() {
 							+
 						</button>
 					</div>
+
+					<button className={styles.remove} onClick={e => removeItem(x)}>
+						REMOVE
+					</button>
 				</div>
 			);
 		});

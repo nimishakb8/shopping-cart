@@ -19,3 +19,22 @@
 .cart {
 	display: flex;
 }
+/* .notification {
+  background-color: #555;
+  color: white;
+  text-decoration: none;
+  padding: 15px 26px;
+  position: relative;
+  display: inline-block;
+  border-radius: 2px;
+} */
+
+.badge {
+	position: absolute;
+	right: -1px;
+	padding: 5px 10px;
+	border-radius: 60%;
+	background-color: red;
+	color: white;
+	font-weight: bold;
+}
