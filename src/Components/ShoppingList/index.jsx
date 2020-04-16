@@ -8,13 +8,13 @@ import carSrc from '../../assets/images/Car.jpg';
 
 class ShoppingCart extends React.Component {
 	state = {
-		shoppingList: []
+		shoppingList: [],
 	};
 
 	showItemAdded(id) {
 		var x = document.getElementById(id);
 		x.className = styles.showItemAdded.show;
-		setTimeout(function() {
+		setTimeout(function () {
 			x.className = styles.showItemAdded;
 		}, 1000);
 	}
@@ -22,7 +22,7 @@ class ShoppingCart extends React.Component {
 	setCart(item, cartVal) {
 		const [cartItems, setCartItems] = cartVal;
 		let flag = false;
-		cartItems.forEach(x => {
+		cartItems.forEach((x) => {
 			if (x.id === item.id) {
 				x.qty ? (x.qty = x.qty + 1) : (x.qty = 1);
 				flag = true;
@@ -50,7 +50,7 @@ class ShoppingCart extends React.Component {
 			let data = [];
 			if (config.searchStr.trim().length > 0) {
 				data = items.filter(
-					x =>
+					(x) =>
 						x.name.toLowerCase().search(config.searchStr.toLowerCase()) !== -1
 				);
 			} else {
@@ -68,26 +68,27 @@ class ShoppingCart extends React.Component {
 			});
 
 			data = data.filter(
-				item =>
+				(item) =>
 					item.price >= config.filterKey.min &&
 					item.price <= config.filterKey.max
 			);
 
 			// const { shoppingList } = this.state;
-			return data.map(item => {
+			return data.map((item) => {
 				return (
 					<div className={styles.shopping}>
 						<img src={carSrc} style={{ width: '100px', height: '120px' }} />
 						<div className={styles.item}> {item.name}</div>
 
 						<div className={styles.priceContainer}>
-							<span className={styles.price}>{`Rs ${item.price}`}</span>
-							<span className={styles.discount}>
-								{`${item.discount} % off`}
-							</span>
+							<span className={styles.price}>{`Rs ${item.price}\u00A0 `}</span>
+							<strike className={styles.actual}>{`Rs ${item.actual} `}</strike>
+							<span
+								className={styles.discount}
+							>{`\u00A0${item.discount}% off`}</span>
 						</div>
 						<button
-							onClick={e => {
+							onClick={(e) => {
 								this.setCart(item, cartVal);
 								this.showItemAdded(item.id);
 							}}
@@ -108,9 +109,9 @@ class ShoppingCart extends React.Component {
 		return (
 			<div className={styles.itemWrapper}>
 				<CartContext.Consumer>
-					{cartVal => (
+					{(cartVal) => (
 						<SearchFilterSortContext.Consumer>
-							{config => this.getListOfItems(config[0], cartVal)}
+							{(config) => this.getListOfItems(config[0], cartVal)}
 						</SearchFilterSortContext.Consumer>
 					)}
 				</CartContext.Consumer>

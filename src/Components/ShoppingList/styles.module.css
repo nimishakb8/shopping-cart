@@ -20,9 +20,15 @@
 
 .priceContainer {
 	font-size: 12px;
+	display: flex;
+	justify-content: space-between;
 }
 .price {
 	font-weight: bold;
+}
+.actual {
+	color: gray;
+	font-size: 10px;
 }
 .discount {
 	color: green;
